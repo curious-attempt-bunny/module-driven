@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var moduleDriven = require('..');
+var fs           = require('fs');
+
+if (process.argv.length != 3) {
+  console.error("Usage: moduleDriven <module name>");
+  return;
+}
+var outputDirectory = process.argv[2];
+
+var templateDirectory = require('path').join(process.env['HOME'], ".config", "moduleDriven");
+if (!fs.existsSync(templateDirectory)) {
+  console.error("No template directory exists at "+templateDirectory);
+  return;
+}
+
+moduleDriven(templateDirectory, outputDirectory);
