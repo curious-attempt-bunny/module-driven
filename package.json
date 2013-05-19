@@ -13,6 +13,10 @@
     "test": "tap test/*.js"
   },
   "dependencies": {
+    "tweezers": "~0.1.0",
+    "mkdirp": "~0.3.5",
+    "walker": "~1.0.3",
+    "handlebars": "~1.0.11"
   },
   "devDependencies": {
     "tap": "~0.4.3",
