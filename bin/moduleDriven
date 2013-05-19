@@ -9,7 +9,7 @@ if (process.argv.length != 3) {
 }
 var outputDirectory = process.argv[2];
 
-var templateDirectory = require('path').join(process.env['HOME'], ".config", "moduleDriven");
+var templateDirectory = require('path').join(process.env['HOME'], ".config", "module-driven");
 if (!fs.existsSync(templateDirectory)) {
   console.error("No template directory exists at "+templateDirectory);
   return;
