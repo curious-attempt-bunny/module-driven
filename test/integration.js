@@ -1,21 +1,7 @@
 var test         = require('tape');
 var moduleDriven = require('..');
 var fs           = require('fs');
-
-var deleteFolderRecursive = function(path) {
-  if( fs.existsSync(path) ) {
-    fs.readdirSync(path).forEach(function(file,index){
-      var curPath = path + "/" + file;
-      if(fs.statSync(curPath).isDirectory()) { // recurse
-        deleteFolderRecursive(curPath);
-      } else { // delete file
-        fs.unlinkSync(curPath);
-      }
-    });
-    fs.rmdirSync(path);
-  }
-};
-
+var rmdir        = require('rmdir');
 
 test('apply example', function(t) {
   moduleDriven('../example', '../tmp', {context: {name: 'foo', description: 'bar'}}, function() {
@@ -25,6 +11,6 @@ test('apply example', function(t) {
     t.ok(fs.existsSync('../tmp/test'), 'Expected directory to be present');
     t.end();
 
-    deleteFolderRecursive('../tmp');
+    rmdir('../tmp', function() {});
   });
 });
