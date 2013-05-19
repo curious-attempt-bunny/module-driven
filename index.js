@@ -6,13 +6,13 @@ var fs         = require('fs');
 var handlebars = require('handlebars');
 var readline   = require('readline');
 
-module.exports = function(templateDirectory, outputParentDirectory) {
+module.exports = function(templateDirectory, outputDirectory) {
   var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
   var pathFor = function(source) {
-    return path.join(outputParentDirectory, source.substring(templateDirectory.length));
+    return path.join(outputDirectory, source.substring(templateDirectory.length));
   };
   var context = {};
   var files = [];
