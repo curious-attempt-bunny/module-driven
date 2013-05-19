@@ -5,7 +5,6 @@ var mkdirp     = require('mkdirp');
 var fs         = require('fs');
 var handlebars = require('handlebars');
 var readline   = require('readline');
-var Stream     = require('stream');
 
 module.exports = function(templateDirectory, outputParentDirectory) {
   var rl = readline.createInterface({
