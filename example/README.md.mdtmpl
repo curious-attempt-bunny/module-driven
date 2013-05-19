@@ -1,0 +1,16 @@
+# Description
+
+{{description}}
+
+# Usage
+
+    var {{name}} = require('{{name}}');
+    {{name}}(...);
+
+# Installation
+
+    npm install {{name}}
+
+# License
+
+MIT
