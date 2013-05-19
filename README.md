@@ -1,3 +1,7 @@
+# Description [![build status](https://secure.travis-ci.org/curious-attempt-bunny/module-driven.png)](http://next.travis-ci.org/curious-attempt-bunny/module-driven)
+
+For the module-driven: quickly create a new node.js module based on a template folder in ~/.config/module-driven.
+
 # Installation
 
     $ npm install -g module-driven
