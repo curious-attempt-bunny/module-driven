@@ -10,7 +10,7 @@ For the module-driven: quickly create a new node.js module based on a template f
 
 First create yourself the directory for the template folder.
 
-   $ mkdir -p ~/.config/moduleDriven 
+    $ mkdir -p ~/.config/moduleDriven 
 
 Now populate the folder with the files your template files. Use the .mdtmpl extension for any files you want to parameterize. These files will be treated as handlebars templates.
 
@@ -39,6 +39,6 @@ I've included my template folder as an [example](https://github.com/curious-atte
 
 # Usage
 
-    moduleDriven my-new-nodejs-module-name
+    $ moduleDriven my-new-nodejs-module-name
 
 Note that for convenience, "name" is bound to the folder name - "my-new-nodejs-module-name" in the above case.
