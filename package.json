@@ -1,11 +1,14 @@
 {
   "name": "module-driven",
   "description": "For the module-driven: quickly create a new node.js module based on a template folder in ~/.config/moduleDriven",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "git://github.com/curious-attempt-bunny/module-driven.git"
   },
   "main": "index.js",
+  "bin": {
+    "moduleDriven": "bin/moduleDriven"
+  },
   "scripts": {
     "test": "tap test/*.js"
   },
