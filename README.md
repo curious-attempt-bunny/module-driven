@@ -31,7 +31,7 @@ Now populate the folder with the files your template files. Use the .mdtmpl exte
       }
     }
 
-I've included my template folder as an [example](tree/master/example).
+I've included my template folder as an [example](https://github.com/curious-attempt-bunny/module-driven/tree/master/example).
 
 # Usage
 
