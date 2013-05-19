@@ -6,7 +6,17 @@ var fs         = require('fs');
 var handlebars = require('handlebars');
 var readline   = require('readline');
 
-module.exports = function(templateDirectory, outputDirectory) {
+module.exports = function(templateDirectory, outputDirectory, options, next) {
+  if (typeof(options) == 'function') {
+    next = options;
+    options = {};
+  }
+  if (!next) {
+    next = function() {};
+  }
+  if (!options) {
+    options = {};
+  }
   var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -14,7 +24,7 @@ module.exports = function(templateDirectory, outputDirectory) {
   var pathFor = function(source) {
     return path.join(outputDirectory, source.substring(templateDirectory.length));
   };
-  var context = {name: path.basename(outputDirectory)};
+  var context = options.context || {name: path.basename(outputDirectory)};
   var files = [];
   walker(templateDirectory)
     .on('dir', function(directory) {
@@ -30,6 +40,7 @@ module.exports = function(templateDirectory, outputDirectory) {
   var processFiles = function(files) {
     if (files.length == 0) {
       rl.close();
+      next(null);
       return;
     }
 
