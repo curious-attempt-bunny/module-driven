@@ -18,7 +18,6 @@ module.exports = function(templateDirectory, outputParentDirectory) {
   var files = [];
   walker(templateDirectory)
     .on('dir', function(directory) {
-      console.log(directory, pathFor(directory));
       mkdirp(pathFor(directory), function(err) { if (err) throw err; });
     })
     .on('file', function(file) {
