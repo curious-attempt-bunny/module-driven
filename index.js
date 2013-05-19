@@ -14,7 +14,7 @@ module.exports = function(templateDirectory, outputDirectory) {
   var pathFor = function(source) {
     return path.join(outputDirectory, source.substring(templateDirectory.length));
   };
-  var context = {};
+  var context = {name: path.basename(outputDirectory)};
   var files = [];
   walker(templateDirectory)
     .on('dir', function(directory) {

@@ -36,3 +36,5 @@ I've included my template folder as an [example](https://github.com/curious-atte
 # Usage
 
     moduleDriven my-new-nodejs-module-name
+
+Note that for convenience, "name" is bound to the folder name - "my-new-nodejs-module-name" in the above case.
